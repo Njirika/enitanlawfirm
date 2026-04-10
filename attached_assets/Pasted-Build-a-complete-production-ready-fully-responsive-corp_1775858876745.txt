@@ -1,0 +1,551 @@
+Build a complete, production-ready, fully responsive corporate law firm website for Enitan Afolabi & Company, with both frontend and backend, using a modern stack that works well on Replit.
+Project overview
+Create a premium, elegant, modern corporate law firm website for Enitan Afolabi & Company, a Lagos-based law firm founded in 1996. The website must feel authoritative, refined, warm, and trustworthy. It should not look like a generic template. It should be inspired by top-tier corporate law firm websites.
+Use the following color direction:
+•	Primary: deep dark brown
+•	Secondary: warm tan/light brown
+•	Neutral: white
+Use white generously for clarity and premium spacing. Use the brown and tan tones for accents, buttons, active states, cards, borders, and sections.
+The website must be extremely mobile responsive, including:
+•	all public pages
+•	navigation/menu
+•	forms
+•	practice area sidebar/tabs
+•	admin login
+•	admin dashboard
+•	admin tables/cards
+•	blog management
+•	career applications view
+•	contact messages view
+Tech stack
+Choose a modern, maintainable stack suitable for Replit. Preferred stack:
+•	Frontend: Next.js latest stable version with App Router, React, TypeScript, Tailwind CSS
+•	Backend/API: Next.js server actions and/or route handlers
+•	Database/Auth/Storage: Supabase
+•	CMS-like admin: custom admin dashboard inside the app
+•	Form validation: Zod + React Hook Form
+•	UI: clean custom UI with accessible components
+•	Deployment target: Replit deployment-ready
+If needed, use:
+•	Supabase Auth for admin authentication
+•	Supabase Postgres for data
+•	Supabase Storage for blog images and optional document uploads
+•	Markdown or rich text blog editor
+•	Framer Motion for subtle animations only
+Main site structure
+Create these public pages:
+1.	Home
+2.	About
+3.	Practice Areas
+4.	Our Team
+5.	Careers
+6.	Contact
+7.	Blog
+8.	Blog Details page
+Do not create separate pages for:
+•	Sectors
+•	Clients
+However, sector expertise can be woven into homepage and practice area content where appropriate.
+Brand and visual direction
+The design should be:
+•	premium
+•	minimal
+•	corporate
+•	warm
+•	refined
+•	confident
+•	modern
+•	elegant without being flashy
+Use:
+•	clean typography hierarchy
+•	generous spacing
+•	large section padding
+•	subtle hover effects
+•	soft card backgrounds
+•	thin dividers
+•	tasteful animations
+•	sharp imagery
+•	clean CTA buttons
+Do not clone any sample exactly. Use the samples only as inspiration and produce a more polished custom design.
+Images
+Use high-quality, premium, professional images where needed:
+•	legal/corporate/architecture/interiors/city/business imagery
+•	relevant service imagery for practice areas
+•	refined career page imagery
+•	subtle premium contact page background or texture
+•	professional portrait placeholders or image containers for team members if actual photos are not yet available
+Optimize all images for performance and responsiveness.
+Navigation and footer requirements
+Header / navigation
+Create a premium sticky header with:
+•	logo/firm name on the left
+•	nav links in the center/right
+•	a highlighted “Contact Us” CTA button on the far right
+•	mobile hamburger menu with smooth open/close
+•	excellent mobile usability
+•	active page state
+•	sticky behavior on scroll
+Nav items:
+•	Home
+•	About
+•	Practice Areas
+•	Our Team
+•	Careers
+•	Blog
+•	Contact Us
+Footer
+Create a refined multi-column footer with:
+•	firm logo/name block
+•	quick navigation links
+•	practice area links
+•	contact details
+•	optional social links placeholders
+•	copyright
+Footer must be responsive and stack elegantly on mobile.
+Content to include
+Use the following content as the foundation of the website. Preserve professionalism, improve readability, and structure the copy elegantly. Minor grammatical refinement is allowed, but do not lose meaning.
+Firm details
+•	Name: Enitan Afolabi & Company
+•	Founded: 1996
+•	Head Office: 1st Floor, Chemline House, No 7, Obasa road, off Oba Akran Avenue, Ikeja, Lagos-State.
+•	Email: info@enitanafolabiandco.com
+•	Telephone: +2348119480206
+About Us
+Since its founding in 1996, Enitan Afolabi & Company has stood as a pillar of legal excellence in Ikeja, Lagos. Built on a foundation of integrity and unwavering responsibility, we serve a diverse clientele from individual stakeholders to international corporations with the dedication and strategic insight that define a truly trusted legal partner.
+Vision
+To build a firm of legal practitioners who are responsive to the ever-evolving needs of our clients, delivering world-class expertise and resolving complex problems to the utmost satisfaction.
+Mission
+To lead the legal industry through honesty, dedication, and personal integrity. Our proactive support staff and determined lawyers use initiative to succeed while rendering premium services in the global marketplace.
+Practice Areas
+Commercial Law & Corporate Practice
+Our team in this practice area possesses deep expertise in various types of corporate finance transactions. This expertise stems from our involvement in several high-profile deals with local, international, and multinational corporations. We provide legal advisory services related to banking, financing, and refinancing transactions, as well as infrastructure finance, project finance, and asset finance. Our lawyers have extensive experience in specialist drafting, negotiating, and advising on a wide range of corporate financing matters.
+Civil Litigation
+We prosecute and defend litigation matters for our clients in courts and tribunals located in various states of Nigeria. The firm’s primary objective is to ensure that disputes arising from the business and commercial activities of clients are effectively resolved with minimum expenditure of time and resources. Our litigation practice supports our corporate law practice. Our team has helped extend and clarify the frontiers of commercial law and practice in Nigeria, especially through litigation.
+Property & Real Estate Consultancy
+Enitan Afolabi & Co. provides legal services to clients for the acquisition, development, construction, financing, leasing, management/operation, and other conveyance of real estate. We apply a holistic approach to real estate matters and work across practice areas in meeting the diverse needs of our clients.
+Specialized expertise to highlight within the site
+•	Oil & Gas
+•	Maritime
+•	Banking & Insurance
+Use these within homepage and practice area sections, not as separate standalone pages.
+Executive Profiles
+Enitan Godwin Afolabi, Esq.
+•	Role: Principal Partner & Consultant
+•	Call to Bar: 1986
+A distinguished legal practitioner with over four decades of experience, Mr. Afolabi is an alumnus of the University of Ife (now Obafemi Awolowo University). He began his career in the Directorate of Public Prosecutions at the Ministry of Justice before holding senior leadership roles at Fola Akinrinsola & Co. and S.O. Ige & Co. His unique background combining high-level litigation experience with leadership as a Corporate Director at Olanibi Papa Ajao Community Bank enables him to offer clients a rare synthesis of legal foresight and strategic business insight.
+Francis Afeakuye Izuagie
+•	Role: Senior Associate
+•	Call to Bar: 2001
+A graduate of Ambrose Alli University, Mr. Izuagie brings a sharp focus to litigation. Since joining the firm in 2008, he has led the civil litigation department with a courtroom style defined by precision and persuasive advocacy. His prior experience at Kayode Adaramoye & Associates and Chief O.O. Ajala & Co. gives him a formidable foundation in corporate and commercial disputes.
+Olamide Oluwasegun Afolabi
+•	Role: Senior Associate
+•	Call to Bar: 2024
+Olamide is a driven and passionate lawyer with a developing specialization in Maritime Law. He holds an LL.B. from Houdegbe North American University (2015) and Crescent University, Abeokuta (2019). Prior to joining Enitan Afolabi & Company, he honed his practice at Jean Chiazor & Partners, where he gained valuable experience in litigation and Maritime Practice. A member of the Institute of Construction Arbitrators and a Fellow of the Institute of Chartered Mediators and Conciliators of Nigeria (ICMC), Olamide is committed to delivering exceptional legal solutions with a focus on excellence and client advocacy.
+Careers content
+Enitan Afolabi & Company is composed of a Head of Chambers, four dedicated Associates, and a proactive support staff including a Litigation Officer and Secretary. We pride ourselves on being a responsive firm that adapts to the shifting legal needs of the global marketplace while maintaining the personal integrity of a boutique practice.
+Public page requirements
+1) Home page
+Design a strong law firm homepage with:
+•	premium hero section
+•	strong headline and subheadline
+•	CTA buttons such as “Book a Consultation” / “Contact Us” / “Explore Practice Areas”
+•	section highlighting firm legacy since 1996
+•	concise about preview
+•	practice areas preview cards
+•	specialized expertise highlight
+•	why choose us / differentiators
+•	team preview
+•	careers preview
+•	contact CTA strip
+•	refined transitions between sections
+Create original content where not supplied, but keep it aligned with corporate legal industry standards.
+2) About page
+Include:
+•	firm story
+•	mission
+•	vision
+•	values
+•	legacy and credibility
+•	optional timeline or structured sections
+•	image support
+•	subtle CTA to contact the firm
+3) Practice Areas page
+This page is very important.
+Build it with a left-side vertical navigation / tab-style menu for desktop, inspired by the sample. The left side should list all practice areas as rounded or pill-like buttons. Clicking each item should update the content displayed on the right.
+Requirements:
+•	left vertical menu on desktop
+•	stacked accordion or tab layout on mobile
+•	active state styling using brand colors
+•	smooth transitions
+•	each practice area should display:
+o	large title
+o	introductory text
+o	supporting image
+o	optional bullet highlights
+o	related industries or sector mentions where appropriate
+Practice areas to show:
+•	Commercial Law & Corporate Practice
+•	Civil Litigation
+•	Property & Real Estate Consultancy
+Also include secondary highlight cards or mentions for:
+•	Oil & Gas
+•	Maritime
+•	Banking & Insurance
+4) Our Team page
+Important: the page title must be “Our Team”.
+Build this page inspired by the sample:
+•	top section with large featured profile cards for senior lawyers
+•	card layout:
+o	portrait on the left
+o	content block on the right
+o	name
+o	role
+o	call to bar
+o	short summary
+o	“View Profile” button or expand interaction
+•	use this large card style for the 3 executives above
+•	if actual photos are unavailable, use elegant placeholders with aspect-ratio locked containers
+Below that, optionally add:
+•	a smaller grid section for future team members or support staff, designed to be easily manageable via admin later if desired
+•	for now, at minimum, elegantly present the 3 provided profiles
+Create profile detail modals or dedicated profile sections so users can read full bios without cluttering the page.
+5) Careers page
+Build a refined careers page inspired by the sample:
+•	two-column layout on desktop
+•	left: premium image
+•	right: culture copy + application form
+•	responsive stacked layout on mobile
+•	include a short introduction and value proposition
+•	simple application form with:
+o	full name
+o	email address
+o	phone number
+o	position applying for (optional field)
+o	cover note/message
+o	CV upload (optional but recommended, stored in Supabase Storage)
+•	CTA button: “Apply Now”
+This page does not need complex job listings. It can be an open application flow.
+6) Contact page
+Build a premium contact page inspired by the sample:
+•	heading + intro text
+•	two-column layout
+•	left: contact form
+•	right: office details
+•	responsive stacking on mobile
+•	premium subtle background or texture
+Contact form fields:
+•	full name
+•	email address
+•	phone number
+•	subject
+•	message
+Right column should show:
+•	office address
+•	email
+•	phone number
+7) Blog page
+Create a professional blog listing page for legal insights, updates, articles, and publications.
+Requirements:
+•	hero heading
+•	blog cards with featured image, category, title, excerpt, date, author
+•	search
+•	category filter
+•	pagination or load more
+•	responsive grid/list layout
+8) Blog details page
+Requirements:
+•	featured image
+•	title
+•	category
+•	author
+•	publish date
+•	rich formatted article body
+•	related posts section
+•	share buttons
+•	responsive typography
+•	SEO-friendly metadata
+Admin dashboard requirements
+Create a secure admin area that is fully mobile responsive.
+Admin access
+•	route: /admin
+•	route: /admin/login
+•	protect all admin routes
+•	use Supabase Auth for admin login
+•	only authenticated admin users can access dashboard
+•	redirect unauthorized users to admin login
+•	include logout
+Admin dashboard pages
+Create a clean dashboard UI with sidebar on desktop and collapsible menu on mobile.
+Admin should be able to:
+1.	Create, read, update, delete blog posts
+2.	Upload blog featured images
+3.	Save drafts and publish posts
+4.	View all contact form submissions
+5.	View all careers applications
+6.	View application details
+7.	Download/view uploaded CVs
+8.	See basic dashboard stats:
+o	total blog posts
+o	published posts
+o	draft posts
+o	total messages
+o	total applications
+Optional bonus:
+•	mark contact messages as read/unread
+•	mark applications as reviewed
+•	filter by date/status
+•	delete spam submissions
+•	dashboard search
+Blog editor in admin
+Build a polished admin blog editor with:
+•	title
+•	slug
+•	excerpt
+•	category
+•	featured image upload
+•	rich text or markdown body
+•	author
+•	status: draft/published
+•	SEO title
+•	SEO description
+•	publish date
+Admin UI requirements
+•	premium but simple
+•	highly usable on mobile
+•	cards/tables that collapse elegantly on small screens
+•	not cramped
+•	clear touch targets
+•	accessible forms and controls
+Database design with Supabase
+Use Supabase Postgres. Create migrations or SQL schema for at least these tables:
+blog_posts
+Fields:
+•	id
+•	title
+•	slug (unique)
+•	excerpt
+•	content
+•	category
+•	featured_image_url
+•	author_name
+•	status (draft, published)
+•	seo_title
+•	seo_description
+•	published_at
+•	created_at
+•	updated_at
+contact_messages
+Fields:
+•	id
+•	full_name
+•	email
+•	phone
+•	subject
+•	message
+•	is_read
+•	created_at
+career_applications
+Fields:
+•	id
+•	full_name
+•	email
+•	phone
+•	position
+•	message
+•	cv_url
+•	status (new, reviewed, shortlisted, archived)
+•	created_at
+Optional future-friendly tables:
+site_settings
+•	id
+•	key
+•	value
+•	updated_at
+team_members
+•	id
+•	full_name
+•	role
+•	call_to_bar
+•	short_bio
+•	full_bio
+•	image_url
+•	display_order
+•	featured
+•	created_at
+•	updated_at
+If helpful, seed team_members with the three provided executive profiles.
+Supabase requirements
+•	Use Supabase client correctly on both server and client
+•	implement row-level security appropriately
+•	public can submit contact and careers forms
+•	only admin can manage blog posts and view submissions
+•	use Supabase Storage bucket for:
+o	blog images
+o	career CV uploads
+o	optional team images
+Implement secure policies.
+Sprint-based execution plan
+Implement in these sprints and structure the codebase cleanly.
+Sprint 1: Foundation and architecture
+•	initialize Next.js + TypeScript + Tailwind
+•	set up folder structure
+•	create reusable layout system
+•	configure fonts, theme, color tokens
+•	create shared components
+•	implement responsive header and footer
+•	configure environment variables
+•	connect Supabase project
+•	create base pages and route structure
+•	create global SEO defaults
+•	ensure clean code architecture
+Sprint 2: Public frontend design system
+•	build polished UI primitives:
+o	buttons
+o	cards
+o	inputs
+o	textarea
+o	badges
+o	section headers
+o	tabs
+o	modals or drawers
+•	implement responsive spacing and breakpoints
+•	implement subtle animations
+•	build image components with optimization
+•	ensure accessibility and keyboard navigation
+Sprint 3: Homepage and About page
+•	build homepage with premium layout
+•	create all homepage sections
+•	build About page
+•	write refined supporting copy where needed
+•	integrate strong CTAs
+•	optimize mobile layouts thoroughly
+Sprint 4: Practice Areas page
+•	build left-side desktop menu and mobile accordion/tab alternative
+•	create dynamic practice area content rendering
+•	add supporting imagery
+•	add related expertise highlights
+•	ensure perfect responsiveness and smooth interactions
+Sprint 5: Our Team page
+•	build large featured team cards
+•	create profile expansion/detail behavior
+•	style page elegantly
+•	support future extensibility for more team members
+•	make mobile cards stack beautifully
+Sprint 6: Careers and Contact pages
+•	build Careers page with image + form layout
+•	build Contact page with form + contact detail layout
+•	validate forms
+•	store submissions in Supabase
+•	upload CV files to Supabase Storage
+•	add success/error states
+•	protect against spam/basic abuse if possible
+Sprint 7: Blog frontend
+•	build blog listing page
+•	build blog details page
+•	implement categories, search, and pagination
+•	add SEO metadata per post
+•	ensure good reading experience on mobile and desktop
+Sprint 8: Admin authentication and dashboard shell
+•	implement /admin/login
+•	implement protected admin layout
+•	build dashboard homepage with KPI cards
+•	responsive sidebar / mobile nav
+•	logout flow
+•	route protection middleware
+Sprint 9: Admin CRUD for blog posts
+•	create blog posts table and editor UI
+•	implement create/read/update/delete
+•	image upload
+•	status management
+•	draft/publish flow
+•	slug generation
+•	rich text editing
+•	validation and helpful form UX
+Sprint 10: Admin views for contact and careers
+•	build dashboard pages to list contact messages
+•	build dashboard pages to list career applications
+•	detail view drawers/modals/pages
+•	status updates
+•	mobile-friendly cards/tables
+•	downloadable CV access
+Sprint 11: QA, performance, responsiveness, polish
+•	full responsive audit across phones, tablets, laptops, desktop
+•	polish spacing, cards, forms, nav, dashboard
+•	optimize image loading
+•	improve loading states
+•	improve error handling
+•	test admin flows
+•	test all form submissions
+•	test protected routes
+•	test SEO basics
+•	remove dead code
+•	ensure deploy readiness
+Sprint 12: Deployment and handoff
+•	configure deployment for Replit
+•	add README with setup steps
+•	add .env.example
+•	include Supabase setup instructions
+•	document admin creation flow
+•	expose public site route
+•	expose admin login route
+•	output final deployment URLs after deployment
+•	ensure app is ready to share
+Functional requirements
+Forms
+All forms must:
+•	validate inputs
+•	show inline errors
+•	have loading states
+•	have success states
+•	be accessible
+•	work well on mobile
+•	store data in Supabase
+Responsiveness
+Prioritize mobile responsiveness from the start, not as an afterthought.
+•	header collapses elegantly
+•	footer stacks cleanly
+•	forms fit small screens
+•	team cards stack properly
+•	practice areas convert well for touch interaction
+•	admin dashboard works comfortably on phones
+Accessibility
+•	semantic HTML
+•	keyboard navigation
+•	visible focus states
+•	alt text
+•	proper labels
+•	color contrast
+SEO
+•	metadata for all pages
+•	Open Graph basics
+•	clean slugs
+•	sitemap if possible
+•	robots file
+•	structured headings
+Performance
+•	optimized images
+•	lazy loading where appropriate
+•	code splitting
+•	avoid heavy libraries unless necessary
+Deliverables
+At the end, provide:
+1.	fully functional website
+2.	fully functional admin login and dashboard
+3.	Supabase schema/migrations
+4.	README with setup instructions
+5.	environment variable documentation
+6.	sample admin creation instructions
+7.	deployment-ready code
+8.	public site link
+9.	admin login link
+Important final notes
+•	Make this site feel like a real premium law firm website, not a starter template
+•	Do not omit the admin dashboard
+•	Do not omit Supabase integration
+•	Do not omit mobile responsiveness
+•	Use the supplied firm content where provided
+•	Generate refined placeholder content only where necessary
+•	Keep code clean and production-minded
+•	Make the UI polished enough for a client-facing legal brand
+•	Build with future scalability in mind
+

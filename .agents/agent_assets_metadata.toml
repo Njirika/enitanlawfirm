@@ -1,0 +1,62 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "ATmn7sZVVVo-R3-Iy8J05"
+uri = "file://artifacts/law-firm/public/images/hero-bg.png"
+type = "image"
+title = "Hero background dark moody office"
+
+[[generated]]
+id = "CiFONWpiGartZJLhEDlVH"
+uri = "file://artifacts/law-firm/public/images/about-firm.png"
+type = "image"
+title = "About page heritage image"
+
+[[generated]]
+id = "k4ljp-X5H5v5ls4QJ_nsv"
+uri = "file://artifacts/law-firm/public/images/team-1.png"
+type = "image"
+title = "Enitan Afolabi portrait"
+
+[[generated]]
+id = "vbbk9gLFEWmwLw3A2rVR_"
+uri = "file://artifacts/law-firm/public/images/team-2.png"
+type = "image"
+title = "Francis Izuagie portrait"
+
+[[generated]]
+id = "fjG9x8I9KUVxr0DJm70p5"
+uri = "file://artifacts/law-firm/public/images/team-3.png"
+type = "image"
+title = "Olamide Afolabi portrait"
+
+[[generated]]
+id = "H_cjPMbFNSz7h6WrdSUAx"
+uri = "file://artifacts/law-firm/public/images/practice-commercial.png"
+type = "image"
+title = "Commercial Law practice area"
+
+[[generated]]
+id = "r4YnBz4h6Dhczrhw4mkuV"
+uri = "file://artifacts/law-firm/public/images/practice-litigation.png"
+type = "image"
+title = "Civil Litigation practice area"
+
+[[generated]]
+id = "c7v4sqMNOUmTxtlYBNoTY"
+uri = "file://artifacts/law-firm/public/images/practice-real-estate.png"
+type = "image"
+title = "Real Estate practice area"
+
+[[generated]]
+id = "iqbb_0QeTSJv0bdkLtrRp"
+uri = "file://artifacts/law-firm/public/images/careers-hero.png"
+type = "image"
+title = "Careers page hero"
+
+[[generated]]
+id = "NZnTvk6Wgc-3yHgxvuJTo"
+uri = "file://artifacts/law-firm/public/images/blog-1.png"
+type = "image"
+title = "Blog post about corporate law"
