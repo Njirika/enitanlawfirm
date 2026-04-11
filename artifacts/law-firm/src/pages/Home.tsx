@@ -20,7 +20,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/60" />
         </div>
         
-        <div className="relative z-10 container mx-auto px-4 md:px-8 py-16 text-center">
+        <div className="relative z-10 container mx-auto px-4 md:px-8 text-center">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -35,7 +35,7 @@ export default function Home() {
               Built on a foundation of integrity and unwavering responsibility, we serve a diverse clientele — from individual stakeholders to international corporations.
             </p>
             
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/practice-areas">
                 <Button size="lg" className="text-base px-8 h-14 bg-secondary hover:bg-secondary/90 text-white border-0">
                   Our Practice Areas <ArrowRight className="ml-2 w-5 h-5" />
