@@ -60,3 +60,21 @@ id = "NZnTvk6Wgc-3yHgxvuJTo"
 uri = "file://artifacts/law-firm/public/images/blog-1.png"
 type = "image"
 title = "Blog post about corporate law"
+
+[[generated]]
+id = "Dc6heaaipbdJRIj41aqL_"
+uri = "file://artifacts/law-firm/public/images/blog-corporate-governance.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "rS8Edf1yCQOJF-yf-7AZY"
+uri = "file://artifacts/law-firm/public/images/blog-real-estate.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "Y77BFlDBaC-4E9W9_3VMF"
+uri = "file://artifacts/law-firm/public/images/blog-maritime.png"
+type = "image"
+title = "generated_image"
