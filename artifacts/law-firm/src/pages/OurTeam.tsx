@@ -25,7 +25,7 @@ const TEAM_MEMBERS = [
     name: "Francis Afeakuye Izuagie",
     role: "Senior Associate",
     callToBar: "2001",
-    image: "/images/team-2.png",
+    image: "/images/team-francis.jpg",
     summary: "Joined firm in 2008, leads civil litigation department. Known for precision and a highly persuasive advocacy style.",
     fullBio: "Francis Afeakuye Izuagie is a Senior Associate who has been an integral part of the firm since 2008. A graduate of Ambrose Alli University, he was called to the Nigerian Bar in 2001. He currently leads the firm's civil litigation department, bringing a reputation for meticulous precision and a highly persuasive advocacy style. Before joining Enitan Afolabi & Co., he gained extensive experience at Kayode Adaramoye & Associates and Chief O.O. Ajala & Co. His deep understanding of courtroom dynamics and strategic dispute resolution makes him a formidable advocate for our clients."
   },
