@@ -16,7 +16,7 @@ const TEAM_MEMBERS = [
     name: "Enitan Godwin Afolabi, Esq.",
     role: "Principal Partner & Consultant",
     callToBar: "1986",
-    image: "/images/team-1.png",
+    image: "/images/team-enitan.jpg",
     summary: "Over four decades of experience. Alumnus of Obafemi Awolowo University. Started at Directorate of Public Prosecutions.",
     fullBio: "Enitan Godwin Afolabi brings over four decades of unparalleled legal expertise to the firm. An alumnus of the prestigious University of Ife (now Obafemi Awolowo University), his career began at the Directorate of Public Prosecutions, Ministry of Justice. He subsequently held senior roles at Fola Akinrinsola & Co. and S.O. Ige & Co., honing his skills in complex litigation and corporate advisory. His distinguished career also includes serving as Corporate Director at Olanibi Papa Ajao Community Bank. As Principal Partner, he provides strategic direction and consulting across all practice areas, ensuring the firm's legacy of excellence continues."
   },
