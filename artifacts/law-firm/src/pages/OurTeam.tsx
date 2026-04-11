@@ -34,7 +34,7 @@ const TEAM_MEMBERS = [
     name: "Olamide Oluwasegun Afolabi",
     role: "Senior Associate",
     callToBar: "2024",
-    image: "/images/team-3.png",
+    image: "/images/team-olamide.jpg",
     summary: "Specialization in Maritime Law. Fellow of Institute of Chartered Mediators and Conciliators.",
     fullBio: "Olamide Oluwasegun Afolabi is a dynamic Senior Associate with a specialized focus on Maritime Law. He earned his LL.B from Houdegbe North American University (2015) and Crescent University, Abeokuta (2019), before his call to the Bar in 2024. Prior to his current role, he practiced at Jean Chiazor & Partners. Olamide is distinguished not only by his maritime expertise but also his commitment to alternative dispute resolution—he is a Member of the Institute of Construction Arbitrators and a Fellow of the Institute of Chartered Mediators and Conciliators. He brings fresh, innovative legal strategies to complex commercial matters."
   }
