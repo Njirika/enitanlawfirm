@@ -39,10 +39,17 @@ export function Navbar() {
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex items-center justify-between">
           <Link href="/">
-            <div className={`text-2xl font-serif font-bold tracking-tight cursor-pointer transition-colors ${
-              isTransparent ? "text-white" : "text-foreground"
-            }`}>
-              Enitan Afolabi & Co.
+            <div className="flex items-center gap-2.5 cursor-pointer">
+              <img
+                src="/images/logo.png"
+                alt="Enitan Afolabi & Co. Logo"
+                className="w-9 h-9 object-contain flex-shrink-0"
+              />
+              <span className={`text-xl font-serif font-bold tracking-tight transition-colors ${
+                isTransparent ? "text-white" : "text-foreground"
+              }`}>
+                Enitan Afolabi & Co.
+              </span>
             </div>
           </Link>
 

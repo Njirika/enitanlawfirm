@@ -7,7 +7,14 @@ export function Footer() {
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-4">
-            <h3 className="text-2xl font-serif font-bold">Enitan Afolabi & Co.</h3>
+            <div className="flex items-center gap-3">
+              <img
+                src="/images/logo.png"
+                alt="Enitan Afolabi & Co. Logo"
+                className="w-10 h-10 object-contain flex-shrink-0 brightness-0 invert opacity-90"
+              />
+              <h3 className="text-2xl font-serif font-bold">Enitan Afolabi & Co.</h3>
+            </div>
             <p className="text-primary-foreground/80 leading-relaxed">
               A pillar of legal excellence in Lagos since 1996, serving individual stakeholders to international corporations with integrity and strategic insight.
             </p>
