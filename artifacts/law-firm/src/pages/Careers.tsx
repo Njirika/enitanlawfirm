@@ -68,19 +68,11 @@ export default function Careers() {
   };
 
   return (
-    <div className="w-full pb-16 min-h-screen bg-background">
+    <div className="w-full pt-24 pb-16 min-h-screen bg-background">
       {/* Hero */}
-      <section className="relative pt-40 pb-28 md:pt-52 md:pb-40 overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="/images/careers-hero.png"
-            alt="Careers at Enitan Afolabi & Company"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-primary/80" />
-        </div>
-        <div className="relative z-10 container mx-auto px-4 md:px-8 text-center max-w-4xl">
-          <h1 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6">Join Our Team</h1>
+      <section className="py-16 bg-primary text-white">
+        <div className="container mx-auto px-4 md:px-8 text-center max-w-4xl">
+          <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6 text-white">Join Our Team</h1>
           <p className="text-lg md:text-xl text-white/80 leading-relaxed">
             Build your legal career at a firm that values integrity, dedication, and excellence in the global marketplace.
           </p>

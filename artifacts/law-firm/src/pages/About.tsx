@@ -35,7 +35,7 @@ export default function About() {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary mb-6">
-                A Tradition of Excellence
+                About Enitan Afolabi & Co.
               </h2>
               <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
                 <p>
@@ -57,9 +57,9 @@ export default function About() {
               className="relative h-[500px] rounded-xl overflow-hidden shadow-2xl"
             >
               <img 
-                src="/images/about-firm.png" 
-                alt="Law Firm Heritage" 
-                className="w-full h-full object-cover"
+                src="/images/about-lawyers.jpg" 
+                alt="Enitan Afolabi & Co. Legal Team" 
+                className="w-full h-full object-cover object-top"
               />
             </motion.div>
           </div>
