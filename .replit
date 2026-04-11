@@ -40,6 +40,14 @@ localPort = 8084
 externalPort = 5173
 
 [[ports]]
+localPort = 8085
+externalPort = 3000
+
+[[ports]]
+localPort = 8086
+externalPort = 6000
+
+[[ports]]
 localPort = 23363
 externalPort = 80
 
@@ -54,6 +62,14 @@ externalPort = 3003
 [[ports]]
 localPort = 23366
 externalPort = 5000
+
+[[ports]]
+localPort = 23367
+externalPort = 6800
+
+[[ports]]
+localPort = 23368
+externalPort = 8000
 
 [nix]
 channel = "stable-25_05"

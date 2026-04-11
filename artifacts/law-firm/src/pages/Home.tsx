@@ -1,9 +1,12 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Scale, Shield, Building2, Anchor, Droplet, Landmark } from "lucide-react";
+import { ArrowRight, Scale, Shield, Building2, Anchor, Droplet, Landmark, Calendar, User } from "lucide-react";
 import { motion } from "framer-motion";
+import { useListBlogPosts } from "@workspace/api-client-react";
 
 export default function Home() {
+  const { data: blogData } = useListBlogPosts({ page: 1, limit: 3 });
+
   return (
     <div className="w-full">
       {/* Hero Section */}
@@ -17,27 +20,22 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/60" />
         </div>
         
-        <div className="relative z-10 container mx-auto px-4 md:px-8 pt-20">
+        <div className="relative z-10 container mx-auto px-4 md:px-8 pt-20 pb-24 text-center">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl"
+            className="max-w-4xl mx-auto"
           >
-            <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full mb-8">
-              <Scale className="w-4 h-4 text-secondary" />
-              <span className="text-white/90 text-sm font-medium tracking-wide uppercase">Established 1996 • Lagos, Nigeria</span>
-            </div>
-            
-            <h1 className="text-5xl md:text-7xl font-serif font-bold text-white leading-tight mb-6">
-              A Pillar of <span className="text-secondary italic">Legal Excellence</span> <br/>in the Global Marketplace.
+            <h1 className="text-4xl md:text-6xl font-serif font-bold text-white leading-tight mb-6">
+              A Pillar of <span className="text-secondary italic">Legal Excellence</span><br/>in the Global Marketplace.
             </h1>
             
-            <p className="text-lg md:text-xl text-white/80 max-w-2xl mb-10 leading-relaxed font-light">
+            <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
               Built on a foundation of integrity and unwavering responsibility, we serve a diverse clientele — from individual stakeholders to international corporations.
             </p>
             
-            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
               <Link href="/practice-areas">
                 <Button size="lg" className="text-base px-8 h-14 bg-secondary hover:bg-secondary/90 text-white border-0">
                   Our Practice Areas <ArrowRight className="ml-2 w-5 h-5" />
@@ -149,7 +147,7 @@ export default function Home() {
                   <practice.icon className="w-10 h-10 text-secondary mb-4" />
                   <h3 className="text-2xl font-serif font-bold text-primary mb-3">{practice.title}</h3>
                   <p className="text-muted-foreground mb-6 leading-relaxed">{practice.desc}</p>
-                  <Link href={`/practice-areas`}>
+                  <Link href="/practice-areas">
                     <span className="text-secondary font-semibold hover:text-primary transition-colors flex items-center cursor-pointer">
                       Learn more <ArrowRight className="w-4 h-4 ml-1" />
                     </span>
@@ -164,21 +162,27 @@ export default function Home() {
       {/* Specialized Expertise Strip */}
       <section className="py-16 bg-primary text-white">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <h3 className="text-2xl md:text-3xl font-serif font-bold mb-8 md:mb-0">Specialized Industry Expertise</h3>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+            <h3 className="text-2xl md:text-3xl font-serif font-bold">Specialized Industry Expertise</h3>
             <div className="flex flex-wrap justify-center gap-8 md:gap-16">
-              <div className="flex items-center space-x-3">
-                <Droplet className="w-8 h-8 text-secondary" />
-                <span className="text-lg font-medium">Oil & Gas</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Anchor className="w-8 h-8 text-secondary" />
-                <span className="text-lg font-medium">Maritime</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Building2 className="w-8 h-8 text-secondary" />
-                <span className="text-lg font-medium">Banking & Insurance</span>
-              </div>
+              <Link href="/industries/oil-gas">
+                <div className="flex items-center space-x-3 group cursor-pointer">
+                  <Droplet className="w-8 h-8 text-secondary group-hover:scale-110 transition-transform" />
+                  <span className="text-lg font-medium group-hover:text-secondary transition-colors underline-offset-4 group-hover:underline">Oil & Gas</span>
+                </div>
+              </Link>
+              <Link href="/industries/maritime">
+                <div className="flex items-center space-x-3 group cursor-pointer">
+                  <Anchor className="w-8 h-8 text-secondary group-hover:scale-110 transition-transform" />
+                  <span className="text-lg font-medium group-hover:text-secondary transition-colors underline-offset-4 group-hover:underline">Maritime</span>
+                </div>
+              </Link>
+              <Link href="/industries/banking-insurance">
+                <div className="flex items-center space-x-3 group cursor-pointer">
+                  <Building2 className="w-8 h-8 text-secondary group-hover:scale-110 transition-transform" />
+                  <span className="text-lg font-medium group-hover:text-secondary transition-colors underline-offset-4 group-hover:underline">Banking & Insurance</span>
+                </div>
+              </Link>
             </div>
           </div>
         </div>
@@ -203,6 +207,69 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Blog Section */}
+      {blogData && blogData.items.length > 0 && (
+        <section className="py-24 bg-muted/30 border-t border-border">
+          <div className="container mx-auto px-4 md:px-8">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-12 gap-4">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary mb-2">Legal Insights & News</h2>
+                <p className="text-muted-foreground text-lg">Expert commentary and analysis from our legal team.</p>
+              </div>
+              <Link href="/blog">
+                <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white shrink-0">
+                  View All Articles <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {blogData.items.map((post, index) => (
+                <motion.article
+                  key={post.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="group bg-background rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-border flex flex-col"
+                >
+                  {post.featuredImage && (
+                    <div className="h-48 overflow-hidden">
+                      <img
+                        src={post.featuredImage}
+                        alt={post.title}
+                        className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                      />
+                    </div>
+                  )}
+                  <div className="p-6 flex flex-col flex-1">
+                    <span className="text-xs font-semibold tracking-widest uppercase text-secondary mb-3">{post.category}</span>
+                    <h3 className="text-xl font-serif font-bold text-primary mb-3 leading-snug group-hover:text-secondary transition-colors">
+                      {post.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-4 flex-1 line-clamp-3">{post.excerpt}</p>
+                    <div className="flex items-center gap-4 text-xs text-muted-foreground mt-auto pt-4 border-t border-border">
+                      <span className="flex items-center gap-1"><User className="w-3 h-3" />{post.author}</span>
+                      {post.publishedAt && (
+                        <span className="flex items-center gap-1">
+                          <Calendar className="w-3 h-3" />
+                          {new Date(post.publishedAt).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}
+                        </span>
+                      )}
+                    </div>
+                    <Link href={`/blog/${post.slug}`}>
+                      <span className="mt-4 text-secondary font-semibold hover:text-primary transition-colors flex items-center text-sm cursor-pointer">
+                        Read Article <ArrowRight className="w-4 h-4 ml-1" />
+                      </span>
+                    </Link>
+                  </div>
+                </motion.article>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
     </div>
   );
 }

@@ -17,6 +17,11 @@ import Contact from "@/pages/Contact";
 import BlogList from "@/pages/BlogList";
 import BlogPost from "@/pages/BlogPost";
 
+// Industry Pages
+import OilGas from "@/pages/industries/OilGas";
+import Maritime from "@/pages/industries/Maritime";
+import BankingInsurance from "@/pages/industries/BankingInsurance";
+
 // Admin Pages
 import AdminLogin from "@/pages/admin/Login";
 import Dashboard from "@/pages/admin/Dashboard";
@@ -45,6 +50,9 @@ function Router() {
       <Route path="/contact" component={Contact} />
       <Route path="/blog" component={BlogList} />
       <Route path="/blog/:slug" component={BlogPost} />
+      <Route path="/industries/oil-gas" component={OilGas} />
+      <Route path="/industries/maritime" component={Maritime} />
+      <Route path="/industries/banking-insurance" component={BankingInsurance} />
 
       <Route path="/admin/login" component={AdminLogin} />
       

@@ -4,14 +4,22 @@ import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <div className="w-full pt-24 pb-16">
+    <div className="w-full pb-16">
       {/* Header */}
-      <section className="py-16 md:py-24 bg-muted/30">
-        <div className="container mx-auto px-4 md:px-8 text-center max-w-4xl">
-          <h1 className="text-4xl md:text-6xl font-serif font-bold text-primary mb-6">
+      <section className="relative pt-40 pb-28 md:pt-52 md:pb-40 overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/images/about-firm.png"
+            alt="Enitan Afolabi & Company"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-primary/80" />
+        </div>
+        <div className="relative z-10 container mx-auto px-4 md:px-8 text-center max-w-4xl">
+          <h1 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6">
             Our Story & Legacy
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+          <p className="text-lg md:text-xl text-white/80 leading-relaxed">
             A pillar of legal excellence in Lagos, built on a foundation of integrity and unwavering responsibility since 1996.
           </p>
         </div>
