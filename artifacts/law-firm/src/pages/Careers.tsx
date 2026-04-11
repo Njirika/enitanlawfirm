@@ -68,16 +68,27 @@ export default function Careers() {
   };
 
   return (
-    <div className="w-full pt-24 pb-16 min-h-screen bg-background">
-      <div className="container mx-auto px-4 md:px-8 max-w-7xl">
-        
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-4">Join Our Team</h1>
-          <p className="text-lg text-muted-foreground">
+    <div className="w-full pb-16 min-h-screen bg-background">
+      {/* Hero */}
+      <section className="relative pt-40 pb-28 md:pt-52 md:pb-40 overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/images/careers-hero.png"
+            alt="Careers at Enitan Afolabi & Company"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-primary/80" />
+        </div>
+        <div className="relative z-10 container mx-auto px-4 md:px-8 text-center max-w-4xl">
+          <h1 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6">Join Our Team</h1>
+          <p className="text-lg md:text-xl text-white/80 leading-relaxed">
             Build your legal career at a firm that values integrity, dedication, and excellence in the global marketplace.
           </p>
         </div>
+      </section>
+
+      <div className="container mx-auto px-4 md:px-8 max-w-7xl">
+        <div className="h-16" />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Left Column - Culture & Info */}

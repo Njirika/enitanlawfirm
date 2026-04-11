@@ -78,3 +78,15 @@ id = "Y77BFlDBaC-4E9W9_3VMF"
 uri = "file://artifacts/law-firm/public/images/blog-maritime.png"
 type = "image"
 title = "generated_image"
+
+[[generated]]
+id = "yPlp8lGLS7wNf2aZ1G_p1"
+uri = "file://artifacts/law-firm/public/images/team-hero.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "N1rmykEgWi9ejI-Q9T0M1"
+uri = "file://artifacts/law-firm/public/images/blog-hero.png"
+type = "image"
+title = "generated_image"
