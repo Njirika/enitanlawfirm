@@ -20,7 +20,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/60" />
         </div>
         
-        <div className="relative z-10 container mx-auto px-4 md:px-8 pt-20 pb-24 text-center">
+        <div className="relative z-10 container mx-auto px-4 md:px-8 py-16 text-center">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -31,7 +31,7 @@ export default function Home() {
               A Pillar of <span className="text-secondary italic">Legal Excellence</span><br/>in the Global Marketplace.
             </h1>
             
-            <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+            <p className="text-sm md:text-base text-white/80 max-w-xl mx-auto mb-10 leading-relaxed font-light">
               Built on a foundation of integrity and unwavering responsibility, we serve a diverse clientele — from individual stakeholders to international corporations.
             </p>
             
