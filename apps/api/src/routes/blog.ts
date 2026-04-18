@@ -1,4 +1,4 @@
-import { Router } from "express";
+import { Router, type Request, type Response } from "express";
 import { BlogService } from "@workspace/db";
 import {
   ListBlogPostsQueryParams,
@@ -11,7 +11,7 @@ import {
 
 const router = Router();
 
-router.get("/", async (req, res) => {
+router.get("/", async (req: Request, res: Response) => {
   const parsed = ListBlogPostsQueryParams.safeParse(req.query);
   const page = parsed.success ? (parsed.data.page ?? 1) : 1;
   const limit = parsed.success ? (parsed.data.limit ?? 9) : 9;
@@ -37,12 +37,12 @@ router.get("/", async (req, res) => {
   });
 });
 
-router.get("/categories", async (req, res) => {
+router.get("/categories", async (req: Request, res: Response) => {
   const categories = await BlogService.listCategories();
   res.json({ categories });
 });
 
-router.get("/:slug", async (req, res) => {
+router.get("/:slug", async (req: Request, res: Response) => {
   const parsed = GetBlogPostParams.safeParse({ slug: req.params.slug });
   if (!parsed.success) {
     res.status(400).json({ error: "Invalid slug" });
@@ -64,7 +64,7 @@ router.get("/:slug", async (req, res) => {
   });
 });
 
-router.post("/", async (req, res) => {
+router.post("/", async (req: Request, res: Response) => {
   const parsed = CreateBlogPostBody.safeParse(req.body);
   if (!parsed.success) {
     res.status(400).json({ error: "Validation failed", details: parsed.error.flatten() });
@@ -86,7 +86,7 @@ router.post("/", async (req, res) => {
   });
 });
 
-router.put("/:slug", async (req, res) => {
+router.put("/:slug", async (req: Request, res: Response) => {
   const paramsParsed = UpdateBlogPostParams.safeParse({ slug: req.params.slug });
   const bodyParsed = UpdateBlogPostBody.safeParse(req.body);
 
@@ -113,7 +113,7 @@ router.put("/:slug", async (req, res) => {
   });
 });
 
-router.delete("/:slug", async (req, res) => {
+router.delete("/:slug", async (req: Request, res: Response) => {
   const parsed = DeleteBlogPostParams.safeParse({ slug: req.params.slug });
   if (!parsed.success) {
     res.status(400).json({ error: "Invalid slug" });

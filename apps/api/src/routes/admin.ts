@@ -1,11 +1,11 @@
-import { Router } from "express";
+import { Router, type Request, type Response } from "express";
 import { AuthService, BlogService, ContactService, CareerService } from "@workspace/db";
 import { verifyPassword } from "../lib/auth.js";
 import { AdminLoginBody } from "@workspace/api-zod";
 
 const router = Router();
 
-router.post("/login", async (req, res) => {
+router.post("/login", async (req: Request, res: Response) => {
   const parsed = AdminLoginBody.safeParse(req.body);
   if (!parsed.success) {
     res.status(400).json({ error: "Validation failed" });
@@ -28,13 +28,13 @@ router.post("/login", async (req, res) => {
   });
 });
 
-router.post("/logout", (req, res) => {
+router.post("/logout", (req: Request, res: Response) => {
   req.session.destroy(() => {
     res.json({ success: true });
   });
 });
 
-router.get("/me", async (req, res) => {
+router.get("/me", async (req: Request, res: Response) => {
   const adminUserId = (req.session as unknown as Record<string, unknown>).adminUserId as number | undefined;
   if (!adminUserId) {
     res.status(401).json({ error: "Not authenticated" });
@@ -51,7 +51,7 @@ router.get("/me", async (req, res) => {
   res.json({ id: user.id, email: user.email, name: user.name });
 });
 
-router.get("/stats", async (req, res) => {
+router.get("/stats", async (req: Request, res: Response) => {
   const [
     totalMessages,
     newMessages,

@@ -1,4 +1,4 @@
-import { Router } from "express";
+import { Router, type Request, type Response } from "express";
 import { CareerService } from "@workspace/db";
 import {
   SubmitCareerApplicationBody,
@@ -10,7 +10,7 @@ import {
 
 const router = Router();
 
-router.post("/", async (req, res) => {
+router.post("/", async (req: Request, res: Response) => {
   const parsed = SubmitCareerApplicationBody.safeParse(req.body);
   if (!parsed.success) {
     res.status(400).json({ error: "Validation failed", details: parsed.error.flatten() });
@@ -33,7 +33,7 @@ router.post("/", async (req, res) => {
   });
 });
 
-router.get("/applications", async (req, res) => {
+router.get("/applications", async (req: Request, res: Response) => {
   const parsed = ListCareerApplicationsQueryParams.safeParse(req.query);
   const page = parsed.success ? (parsed.data.page ?? 1) : 1;
   const limit = parsed.success ? (parsed.data.limit ?? 20) : 20;
@@ -57,7 +57,7 @@ router.get("/applications", async (req, res) => {
   });
 });
 
-router.get("/applications/:id", async (req, res) => {
+router.get("/applications/:id", async (req: Request, res: Response) => {
   const parsed = GetCareerApplicationParams.safeParse({ id: Number(req.params.id) });
   if (!parsed.success) {
     res.status(400).json({ error: "Invalid ID" });
@@ -80,7 +80,7 @@ router.get("/applications/:id", async (req, res) => {
   });
 });
 
-router.patch("/applications/:id", async (req, res) => {
+router.patch("/applications/:id", async (req: Request, res: Response) => {
   const paramsParsed = UpdateCareerApplicationParams.safeParse({ id: Number(req.params.id) });
   const bodyParsed = UpdateCareerApplicationBody.safeParse(req.body);
 
