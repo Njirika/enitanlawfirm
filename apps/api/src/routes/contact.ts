@@ -1,4 +1,4 @@
-import { Router, type Request, type Response } from "express";
+import { Router, Request, Response } from "express";
 import { ContactService } from "@workspace/db";
 import {
   SubmitContactBody,
