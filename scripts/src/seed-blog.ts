@@ -1,4 +1,4 @@
-import { BlogService } from "../packages/db/src/services/blog.service";
+import { BlogService } from "../../packages/db/src/services/blog.service";
 
 async function seed() {
   try {

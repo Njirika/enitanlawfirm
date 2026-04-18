@@ -5,13 +5,18 @@ import { validateEnv, config } from "./config";
 // Ensure all required environment variables are present
 validateEnv();
 
-const port = config.port;
+// Export for serverless environments (Vercel)
+export default app;
 
-app.listen(port, (err) => {
-  if (err) {
-    logger.error({ err }, "Error listening on port");
-    process.exit(1);
-  }
+if (!process.env.VERCEL) {
+  const port = config.port;
 
-  logger.info({ port }, "Server listening");
-});
+  app.listen(port, (err) => {
+    if (err) {
+      logger.error({ err }, "Error listening on port");
+      process.exit(1);
+    }
+
+    logger.info({ port }, "Server listening");
+  });
+}
