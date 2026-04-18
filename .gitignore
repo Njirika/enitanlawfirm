@@ -1,49 +1,47 @@
-# See https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
-
-# compiled output
-dist
-tmp
-out-tsc
-*.tsbuildinfo
-.expo
-.expo-shared
-
-# dependencies
+# --- General ---
 node_modules
+dist
+dist-api
+build
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
-# IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
-
-# IDE - VSCode
+# --- IDEs & Editors ---
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+.idea
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
+.settings/
 
-# misc
-/.sass-cache
-/connect.lock
-/coverage
-/libpeerconnection.log
-npm-debug.log
-yarn-error.log
-testem.log
-/typings
-
-# System Files
+# --- System & Junk ---
 .DS_Store
 Thumbs.db
+.local
+.agents
+scratch
+attached_assets
+.temp
+.cache
 
-.cursor/rules/nx-rules.mdc
-.github/instructions/nx.instructions.md
+# --- TypeScript & Build ---
+*.tsbuildinfo
+out-tsc
 
-# Replit
-.cache/
-.local/
+# --- Project Specific ---
+supabase/.temp
+supabase/.local
+supabase/storage
