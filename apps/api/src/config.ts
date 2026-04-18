@@ -14,10 +14,10 @@ export function validateEnv() {
   const missing = requiredEnvVars.filter((key) => !process.env[key]);
 
   if (missing.length > 0) {
-    console.error("\x1b[31m%s\x1b[0m", "ERROR: Missing required backend environment variables:");
-    missing.forEach((key) => console.error(`  - ${key}`));
+    const errorMsg = `ERROR: Missing required backend environment variables: ${missing.join(", ")}`;
+    console.error("\x1b[31m%s\x1b[0m", errorMsg);
     console.error("\x1b[33m%s\x1b[0m", "\nPlease check your .env file or deployment settings.\n");
-    process.exit(1);
+    throw new Error(errorMsg);
   }
 
   // Session Secret security check

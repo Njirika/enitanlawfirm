@@ -6,7 +6,7 @@ import session from "express-session";
 import cookieParser from "cookie-parser";
 import router from "./routes/index.js";
 import { logger } from "./lib/logger.js";
-import { config } from "./config";
+import { config } from "./config.js";
 
 const app: Express = express();
 

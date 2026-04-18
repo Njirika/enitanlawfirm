@@ -1,6 +1,6 @@
-import app from "./app";
-import { logger } from "./lib/logger";
-import { validateEnv, config } from "./config";
+import app from "./app.js";
+import { logger } from "./lib/logger.js";
+import { validateEnv, config } from "./config.js";
 
 // Ensure all required environment variables are present
 validateEnv();
