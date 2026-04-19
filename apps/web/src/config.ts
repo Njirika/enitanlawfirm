@@ -14,13 +14,12 @@ export function validateEnv() {
   if (missing.length > 0) {
     console.error("%cERROR: Missing required frontend environment variables:", "color: red; font-weight: bold;");
     missing.forEach((key) => console.error(`  - ${key}`));
-    console.error("%cPlease check your .env file or deployment settings.", "color: orange;");
-    
-    // In production, we might want to show a UI error, but for now we just log and warn.
-    if (import.meta.env.PROD) {
-      throw new Error(`Missing environment variables: ${missing.join(", ")}`);
-    }
   }
+  
+  return {
+    isValid: missing.length === 0,
+    missing
+  };
 }
 
 export const config = {
