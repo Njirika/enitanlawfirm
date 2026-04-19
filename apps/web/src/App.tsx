@@ -64,12 +64,12 @@ function Router() {
       <Route path="/industries/maritime" component={Maritime} />
       <Route path="/industries/banking-insurance" component={BankingInsurance} />
 
-      <Route path="/admin/login" component={AdminLogin} />
       
       {/* Nested Admin Routes inside AdminLayout */}
       <Route path="/admin" nest>
         <AdminLayout>
           <Switch>
+            <Route path="/login" component={AdminLogin} />
             <Route path="/" component={Dashboard} />
             <Route path="/messages" component={Messages} />
             <Route path="/applications" component={Applications} />

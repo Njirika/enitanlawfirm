@@ -22,8 +22,8 @@ export function AdminLayout({ children }: { children: React.ReactNode }) {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
   useEffect(() => {
-    if (!isLoading && !isAdmin && location !== "/admin/login") {
-      setLocation("/admin/login");
+    if (!isLoading && !isAdmin && location !== "/login") {
+      setLocation("/login");
     }
   }, [isAdmin, isLoading, location, setLocation]);
 
@@ -35,7 +35,7 @@ export function AdminLayout({ children }: { children: React.ReactNode }) {
     return null; // Will redirect
   }
 
-  if (location === "/admin/login") {
+  if (location === "/login") {
     return <>{children}</>;
   }
 
