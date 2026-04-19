@@ -10,8 +10,8 @@ globalThis.require = createRequire(import.meta.url);
 const artifactDir = path.dirname(fileURLToPath(import.meta.url));
 
 async function buildAll() {
-  const distDir = path.resolve(artifactDir, "api");
-  await rm(distDir, { recursive: true, force: true });
+  const distDir = artifactDir; // Output directly to the project root
+  // We don't want to recursively delete the root, just the specific index.js if it exists
 
   await esbuild({
     entryPoints: [path.resolve(artifactDir, "server/index.ts")],

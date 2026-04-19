@@ -4,9 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "node ./build.mjs && node --env-file=../../.env --enable-source-maps ./api/index.js",
+    "dev": "node ./build.mjs && node --env-file=../../.env --enable-source-maps ./index.js",
     "build": "node ./build.mjs",
-    "start": "node --env-file=../../.env --enable-source-maps ./api/index.js",
+    "start": "node --env-file=../../.env --enable-source-maps ./index.js",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
