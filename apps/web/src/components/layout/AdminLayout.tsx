@@ -85,7 +85,20 @@ export function AdminLayout({ children }: { children: React.ReactNode }) {
         isCollapsed ? "w-20" : "w-64",
         isMobileOpen ? "translate-x-0" : "-translate-x-full"
       )}>
-        <div className="h-full flex flex-col">
+        {/* Toggle Button - Circular Floating at Top Edge */}
+        <button 
+          onClick={() => setIsCollapsed(!isCollapsed)}
+          className="absolute top-6 -right-4 z-[60] hidden lg:flex items-center justify-center w-8 h-8 rounded-full bg-slate-900 border border-slate-700 text-slate-400 hover:text-white hover:bg-primary hover:border-primary shadow-xl transition-all duration-300 group"
+          title={isCollapsed ? "Expand menu" : "Collapse menu"}
+        >
+          {isCollapsed ? (
+            <ChevronRight className="w-5 h-5 transition-transform group-hover:translate-x-0.5" />
+          ) : (
+            <ChevronLeft className="w-5 h-5 transition-transform group-hover:-translate-x-0.5" />
+          )}
+        </button>
+
+        <div className="h-full flex flex-col relative">
           {/* Logo Section */}
           <div className={cn(
             "p-6 border-b border-slate-800 flex items-center justify-between",
@@ -103,7 +116,7 @@ export function AdminLayout({ children }: { children: React.ReactNode }) {
           </div>
           
           {/* Nav Section */}
-          <nav className="flex-1 p-4 space-y-2 overflow-y-auto">
+          <nav className="flex-1 p-4 space-y-2 overflow-y-auto mt-2">
             {navItems.map((item) => {
               const isActive = location === item.href || (location.startsWith(item.href) && item.href !== "/");
               return (
@@ -135,21 +148,6 @@ export function AdminLayout({ children }: { children: React.ReactNode }) {
 
           {/* Footer Section */}
           <div className="p-4 border-t border-slate-800 bg-slate-950/50">
-            <button 
-              onClick={() => setIsCollapsed(!isCollapsed)}
-              className={cn(
-                "hidden lg:flex items-center w-full px-3 py-2 text-sm text-slate-500 hover:text-white transition-colors mb-2",
-                isCollapsed && "justify-center px-0"
-              )}
-            >
-              {isCollapsed ? <ChevronRight className="w-5 h-5" /> : (
-                <>
-                  <ChevronLeft className="w-5 h-5 mr-3" />
-                  <span>Collapse menu</span>
-                </>
-              )}
-            </button>
-
             <Button 
               variant="ghost" 
               className={cn(

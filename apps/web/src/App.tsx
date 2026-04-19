@@ -69,15 +69,14 @@ function Router() {
       <Route path="/admin" nest>
         <AdminLayout>
           <Switch>
-            <Route path="/login" component={AdminLogin} />
-            <Route path="/" component={Dashboard} />
-            <Route path="" component={Dashboard} />
             <Route path="/messages" component={Messages} />
             <Route path="/applications" component={Applications} />
             <Route path="/blog" component={BlogManagement} />
             <Route path="/blog/new" component={BlogPostForm} />
             <Route path="/blog/edit/:slug" component={BlogPostForm} />
             <Route path="/profile" component={AdminProfile} />
+            <Route path="/" component={Dashboard} />
+            <Route path="" component={Dashboard} />
           </Switch>
         </AdminLayout>
       </Route>
