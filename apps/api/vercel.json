@@ -1,10 +1,5 @@
 {
   "version": 2,
-  "functions": {
-    "dist/index.mjs": {
-      "runtime": "nodejs22.x"
-    }
-  },
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/dist/index.mjs" },
     { "source": "/(.*)", "destination": "/dist/index.mjs" }
