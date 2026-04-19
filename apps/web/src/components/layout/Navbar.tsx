@@ -1,7 +1,8 @@
 import { Link, useLocation } from "wouter";
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, LayoutDashboard } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useAuth } from "@/lib/auth";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
@@ -16,6 +17,7 @@ export function Navbar() {
   const [location] = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { isAdmin } = useAuth();
 
   const isHome = location === "/";
   const isTransparent = isHome && !isScrolled;
@@ -70,25 +72,45 @@ export function Navbar() {
                 </div>
               </Link>
             ))}
-            <Link href="/contact">
-              <Button variant={isTransparent ? "secondary" : "default"} className="font-semibold">
-                Contact Us
-              </Button>
-            </Link>
+            
+            <div className="flex items-center gap-4">
+              {isAdmin && (
+                <Link href="/admin">
+                  <Button variant="outline" className={isTransparent ? "border-white/20 text-white hover:bg-white/10" : ""}>
+                    <LayoutDashboard className="w-4 h-4 mr-2" />
+                    Dashboard
+                  </Button>
+                </Link>
+              )}
+              <Link href="/contact">
+                <Button variant={isTransparent ? "secondary" : "default"} className="font-semibold">
+                  Contact Us
+                </Button>
+              </Link>
+            </div>
           </nav>
 
           {/* Mobile Menu Toggle */}
-          <button
-            className="lg:hidden p-2 text-current"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? (
-              <X className={isTransparent ? "text-white" : "text-foreground"} size={24} />
-            ) : (
-              <Menu className={isTransparent ? "text-white" : "text-foreground"} size={24} />
+          <div className="lg:hidden flex items-center gap-4">
+            {isAdmin && (
+               <Link href="/admin">
+                <Button variant="outline" size="sm" className={isTransparent ? "border-white/20 text-white" : ""}>
+                  <LayoutDashboard className="w-4 h-4" />
+                </Button>
+              </Link>
             )}
-          </button>
+            <button
+              className="p-2 text-current"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? (
+                <X className={isTransparent ? "text-white" : "text-foreground"} size={24} />
+              ) : (
+                <Menu className={isTransparent ? "text-white" : "text-foreground"} size={24} />
+              )}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -107,11 +129,21 @@ export function Navbar() {
               </div>
             </Link>
           ))}
-          <Link href="/contact">
-            <Button className="w-full font-semibold" onClick={() => setIsMobileMenuOpen(false)}>
-              Contact Us
-            </Button>
-          </Link>
+          <div className="flex flex-col gap-2 pt-2 border-t border-border">
+            {isAdmin && (
+              <Link href="/admin">
+                <Button variant="outline" className="w-full font-semibold" onClick={() => setIsMobileMenuOpen(false)}>
+                  <LayoutDashboard className="w-4 h-4 mr-2" />
+                  Admin Dashboard
+                </Button>
+              </Link>
+            )}
+            <Link href="/contact">
+              <Button className="w-full font-semibold" onClick={() => setIsMobileMenuOpen(false)}>
+                Contact Us
+              </Button>
+            </Link>
+          </div>
         </div>
       )}
     </header>

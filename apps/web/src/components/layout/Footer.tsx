@@ -68,12 +68,7 @@ export function Footer() {
         </div>
 
         <div className="pt-8 border-t border-primary-foreground/20 text-center text-primary-foreground/60 text-sm flex flex-col md:flex-row justify-between items-center">
-          <p>&copy; {new Date().getFullYear()} Enitan Afolabi & Company. All rights reserved.</p>
-          <div className="mt-4 md:mt-0 space-x-4">
-            <Link href="/admin/login">
-              <div className="hover:text-white transition-colors cursor-pointer inline-block">Staff Login</div>
-            </Link>
-          </div>
+          <p className="w-full">&copy; {new Date().getFullYear()} Enitan Afolabi & Company. All rights reserved.</p>
         </div>
       </div>
     </footer>
