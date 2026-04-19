@@ -31,7 +31,7 @@ export function AdminLayout({ children }: { children: React.ReactNode }) {
     return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
   }
 
-  if (!isAdmin && location !== "/admin/login") {
+  if (!isAdmin && location !== "/login") {
     return null; // Will redirect
   }
 
