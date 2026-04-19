@@ -4,6 +4,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import { 
   useListContactMessages, 
   useUpdateContactMessage,
+  useDeleteContactMessage,
   getListContactMessagesQueryKey,
   ContactMessage,
   UpdateContactMessageInputStatus
@@ -11,7 +12,17 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone, Clock, Search, Filter } from "lucide-react";
+import { Mail, Phone, Clock, Search, Filter, Trash2 } from "lucide-react";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 import {
   Dialog,
   DialogContent,
@@ -32,6 +43,8 @@ export default function Messages() {
   const { toast } = useToast();
   const queryClient = useQueryClient();
   const updateMutation = useUpdateContactMessage();
+  const deleteMutation = useDeleteContactMessage();
+  const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
 
   const { data, isLoading } = useListContactMessages({ page, limit: 20 });
 
@@ -54,6 +67,23 @@ export default function Messages() {
             setSelectedMessage(updated);
           }
           toast({ title: "Status updated" });
+        }
+      }
+    );
+  };
+
+  const handleDelete = (id: number) => {
+    deleteMutation.mutate(
+      { id },
+      {
+        onSuccess: () => {
+          queryClient.invalidateQueries({ queryKey: getListContactMessagesQueryKey({ page, limit: 20 }) });
+          setSelectedMessage(null);
+          setShowDeleteConfirm(false);
+          toast({ title: "Message deleted" });
+        },
+        onError: () => {
+          toast({ variant: "destructive", title: "Failed to delete message" });
         }
       }
     );
@@ -183,10 +213,42 @@ export default function Messages() {
                   </a>
                 </Button>
               </div>
+
+              <div className="flex justify-start mt-4 border-t border-border pt-4">
+                <Button 
+                  variant="ghost" 
+                  className="text-destructive hover:text-destructive hover:bg-destructive/10 gap-2"
+                  onClick={() => setShowDeleteConfirm(true)}
+                >
+                  <Trash2 className="w-4 h-4" />
+                  Delete Message
+                </Button>
+              </div>
             </>
           )}
         </DialogContent>
       </Dialog>
+
+      <AlertDialog open={showDeleteConfirm} onOpenChange={setShowDeleteConfirm}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+            <AlertDialogDescription>
+              This action cannot be undone. This will permanently delete this conversation history.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogAction 
+              className="bg-destructive text-white hover:bg-destructive/90"
+              onClick={() => selectedMessage && handleDelete(selectedMessage.id)}
+              disabled={deleteMutation.isPending}
+            >
+              {deleteMutation.isPending ? "Deleting..." : "Delete Permanently"}
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </div>
   );
 }

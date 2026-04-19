@@ -36,6 +36,7 @@ import type {
   ListBlogPostsParams,
   ListCareerApplicationsParams,
   ListContactMessagesParams,
+  UpdateAdminInput,
   UpdateBlogPostInput,
   UpdateCareerApplicationInput,
   UpdateContactMessageInput,
@@ -484,6 +485,90 @@ export const useUpdateContactMessage = <
   TContext
 > => {
   return useMutation(getUpdateContactMessageMutationOptions(options));
+};
+
+/**
+ * @summary Delete a contact message
+ */
+export const getDeleteContactMessageUrl = (id: number) => {
+  return `/api/contact/messages/${id}`;
+};
+
+export const deleteContactMessage = async (
+  id: number,
+  options?: RequestInit,
+): Promise<void> => {
+  return customFetch<void>(getDeleteContactMessageUrl(id), {
+    ...options,
+    method: "DELETE",
+  });
+};
+
+export const getDeleteContactMessageMutationOptions = <
+  TError = ErrorType<void>,
+  TContext = unknown,
+>(options?: {
+  mutation?: UseMutationOptions<
+    Awaited<ReturnType<typeof deleteContactMessage>>,
+    TError,
+    { id: number },
+    TContext
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}): UseMutationOptions<
+  Awaited<ReturnType<typeof deleteContactMessage>>,
+  TError,
+  { id: number },
+  TContext
+> => {
+  const mutationKey = ["deleteContactMessage"];
+  const { mutation: mutationOptions, request: requestOptions } = options
+    ? options.mutation &&
+      "mutationKey" in options.mutation &&
+      options.mutation.mutationKey
+      ? options
+      : { ...options, mutation: { ...options.mutation, mutationKey } }
+    : { mutation: { mutationKey }, request: undefined };
+
+  const mutationFn: MutationFunction<
+    Awaited<ReturnType<typeof deleteContactMessage>>,
+    { id: number }
+  > = (props) => {
+    const { id } = props ?? {};
+
+    return deleteContactMessage(id, requestOptions);
+  };
+
+  return { mutationFn, ...mutationOptions };
+};
+
+export type DeleteContactMessageMutationResult = NonNullable<
+  Awaited<ReturnType<typeof deleteContactMessage>>
+>;
+
+export type DeleteContactMessageMutationError = ErrorType<void>;
+
+/**
+ * @summary Delete a contact message
+ */
+export const useDeleteContactMessage = <
+  TError = ErrorType<void>,
+  TContext = unknown,
+>(options?: {
+  mutation?: UseMutationOptions<
+    Awaited<ReturnType<typeof deleteContactMessage>>,
+    TError,
+    { id: number },
+    TContext
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}): UseMutationResult<
+  Awaited<ReturnType<typeof deleteContactMessage>>,
+  TError,
+  { id: number },
+  TContext
+> => {
+  return useMutation(getDeleteContactMessageMutationOptions(options));
 };
 
 /**
@@ -1677,3 +1762,89 @@ export function useGetAdminMe<
 
   return { ...query, queryKey: queryOptions.queryKey };
 }
+
+/**
+ * @summary Update current admin user
+ */
+export const getUpdateAdminMeUrl = () => {
+  return `/api/admin/me`;
+};
+
+export const updateAdminMe = async (
+  updateAdminInput: UpdateAdminInput,
+  options?: RequestInit,
+): Promise<AdminUser> => {
+  return customFetch<AdminUser>(getUpdateAdminMeUrl(), {
+    ...options,
+    method: "PATCH",
+    headers: { "Content-Type": "application/json", ...options?.headers },
+    body: JSON.stringify(updateAdminInput),
+  });
+};
+
+export const getUpdateAdminMeMutationOptions = <
+  TError = ErrorType<void>,
+  TContext = unknown,
+>(options?: {
+  mutation?: UseMutationOptions<
+    Awaited<ReturnType<typeof updateAdminMe>>,
+    TError,
+    { data: BodyType<UpdateAdminInput> },
+    TContext
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}): UseMutationOptions<
+  Awaited<ReturnType<typeof updateAdminMe>>,
+  TError,
+  { data: BodyType<UpdateAdminInput> },
+  TContext
+> => {
+  const mutationKey = ["updateAdminMe"];
+  const { mutation: mutationOptions, request: requestOptions } = options
+    ? options.mutation &&
+      "mutationKey" in options.mutation &&
+      options.mutation.mutationKey
+      ? options
+      : { ...options, mutation: { ...options.mutation, mutationKey } }
+    : { mutation: { mutationKey }, request: undefined };
+
+  const mutationFn: MutationFunction<
+    Awaited<ReturnType<typeof updateAdminMe>>,
+    { data: BodyType<UpdateAdminInput> }
+  > = (props) => {
+    const { data } = props ?? {};
+
+    return updateAdminMe(data, requestOptions);
+  };
+
+  return { mutationFn, ...mutationOptions };
+};
+
+export type UpdateAdminMeMutationResult = NonNullable<
+  Awaited<ReturnType<typeof updateAdminMe>>
+>;
+export type UpdateAdminMeMutationBody = BodyType<UpdateAdminInput>;
+export type UpdateAdminMeMutationError = ErrorType<void>;
+
+/**
+ * @summary Update current admin user
+ */
+export const useUpdateAdminMe = <
+  TError = ErrorType<void>,
+  TContext = unknown,
+>(options?: {
+  mutation?: UseMutationOptions<
+    Awaited<ReturnType<typeof updateAdminMe>>,
+    TError,
+    { data: BodyType<UpdateAdminInput> },
+    TContext
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}): UseMutationResult<
+  Awaited<ReturnType<typeof updateAdminMe>>,
+  TError,
+  { data: BodyType<UpdateAdminInput> },
+  TContext
+> => {
+  return useMutation(getUpdateAdminMeMutationOptions(options));
+};

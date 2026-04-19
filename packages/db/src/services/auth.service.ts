@@ -35,5 +35,17 @@ export const AuthService = {
       .values(data)
       .returning();
     return user;
+  },
+
+  /**
+   * Update an admin user
+   */
+  async updateAdminUser(id: number, data: Partial<InsertAdminUser>) {
+    const [user] = await db
+      .update(adminUsersTable)
+      .set(data)
+      .where(eq(adminUsersTable.id, id))
+      .returning();
+    return user || null;
   }
 };

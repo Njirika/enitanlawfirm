@@ -95,6 +95,13 @@ export const UpdateContactMessageResponse = zod.object({
 });
 
 /**
+ * @summary Delete a contact message
+ */
+export const DeleteContactMessageParams = zod.object({
+  id: zod.coerce.number(),
+});
+
+/**
  * @summary Submit a career application
  */
 export const SubmitCareerApplicationBody = zod.object({
@@ -327,6 +334,21 @@ export const AdminLoginResponse = zod.object({
  * @summary Get current admin user
  */
 export const GetAdminMeResponse = zod.object({
+  id: zod.number(),
+  email: zod.string(),
+  name: zod.string(),
+});
+
+/**
+ * @summary Update current admin user
+ */
+export const UpdateAdminMeBody = zod.object({
+  email: zod.string().optional(),
+  name: zod.string().optional(),
+  password: zod.string().optional(),
+});
+
+export const UpdateAdminMeResponse = zod.object({
   id: zod.number(),
   email: zod.string(),
   name: zod.string(),

@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { AuthProvider } from "@/lib/auth";
 import { Layout } from "@/components/layout/Layout";
 import { AdminLayout } from "@/components/layout/AdminLayout";
+import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import { setBaseUrl } from "@workspace/api-client-react";
 import { validateEnv, config } from "./config";
 import NotFound from "@/pages/not-found";
@@ -37,6 +38,7 @@ import Messages from "@/pages/admin/Messages";
 import Applications from "@/pages/admin/Applications";
 import BlogManagement from "@/pages/admin/BlogManagement";
 import BlogPostForm from "@/pages/admin/BlogPostForm";
+import AdminProfile from "@/pages/admin/Profile";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -74,6 +76,7 @@ function Router() {
             <Route path="/blog" component={BlogManagement} />
             <Route path="/blog/new" component={BlogPostForm} />
             <Route path="/blog/edit/:slug" component={BlogPostForm} />
+            <Route path="/profile" component={AdminProfile} />
           </Switch>
         </AdminLayout>
       </Route>
@@ -116,6 +119,7 @@ function App() {
       <AuthProvider>
         <TooltipProvider>
           <WouterRouter base={config.basePath.replace(/\/$/, "")}>
+            <ScrollToTop />
             <Layout>
               <Router />
             </Layout>

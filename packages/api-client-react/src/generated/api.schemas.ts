@@ -187,6 +187,12 @@ export interface AdminLoginResponse {
   user?: AdminUser;
 }
 
+export interface UpdateAdminInput {
+  email?: string;
+  name?: string;
+  password?: string;
+}
+
 export type ListContactMessagesParams = {
   page?: number;
   limit?: number;

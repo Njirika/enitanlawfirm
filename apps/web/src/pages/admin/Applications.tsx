@@ -196,9 +196,12 @@ export default function Applications() {
                 </Select>
                 <Button 
                   variant="outline" 
-                  onClick={() => setSelectedApp(null)}
+                  className="gap-2"
+                  onClick={() => window.location.href = `tel:${selectedApp.phone}`}
+                  disabled={!selectedApp.phone}
                 >
-                  Close
+                  <Phone className="w-4 h-4" />
+                  Call Applicant
                 </Button>
                 <Button asChild>
                   <a href={`mailto:${selectedApp.email}?subject=Regarding your application to Enitan Afolabi & Co.`}>

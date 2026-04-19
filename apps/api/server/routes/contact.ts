@@ -92,4 +92,14 @@ router.patch("/messages/:id", async (req: Request, res: Response) => {
   res.json({ ...updated, phone: updated.phone ?? undefined, createdAt: updated.createdAt.toISOString() });
 });
 
+router.delete("/messages/:id", async (req: Request, res: Response) => {
+  const id = Number(req.params.id);
+  const deleted = await ContactService.deleteMessage(id);
+  if (!deleted) {
+    res.status(404).json({ error: "Not found" });
+    return;
+  }
+  res.json({ success: true });
+});
+
 export default router;

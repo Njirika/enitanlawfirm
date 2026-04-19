@@ -194,13 +194,13 @@ export default function Home() {
           <img src="/images/hero-bg.png" alt="" className="w-full h-full object-cover" />
         </div>
         <div className="container mx-auto px-4 md:px-8 relative z-10">
-          <div className="bg-muted p-12 md:p-16 rounded-2xl text-center max-w-4xl mx-auto border border-border shadow-sm">
+          <div className="bg-muted p-8 sm:p-12 md:p-16 rounded-2xl text-center max-w-4xl mx-auto border border-border shadow-sm">
             <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-6">Require Legal Counsel?</h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
               Our team of dedicated professionals is ready to provide you with the strategic insight and expert representation you need.
             </p>
             <Link href="/contact">
-              <Button size="lg" className="text-lg px-10 h-14 bg-primary hover:bg-primary/90">
+              <Button size="lg" className="w-full sm:w-auto text-lg px-10 h-12 sm:h-14 bg-primary hover:bg-primary/90">
                 Schedule a Consultation
               </Button>
             </Link>

@@ -123,6 +123,21 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ContactMessage"
+    delete:
+      operationId: deleteContactMessage
+      tags: [contact]
+      summary: Delete a contact message
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "204":
+          description: Deleted
+        "404":
+          description: Not found
 
   /careers:
     post:
@@ -387,6 +402,27 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/AdminUser"
+        "401":
+          description: Not authenticated
+    patch:
+      operationId: updateAdminMe
+      tags: [admin]
+      summary: Update current admin user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdateAdminInput"
+      responses:
+        "200":
+          description: Updated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AdminUser"
+        "400":
+          description: Validation error
         "401":
           description: Not authenticated
 
@@ -731,3 +767,13 @@ components:
         - id
         - email
         - name
+    
+    UpdateAdminInput:
+      type: object
+      properties:
+        email:
+          type: string
+        name:
+          type: string
+        password:
+          type: string

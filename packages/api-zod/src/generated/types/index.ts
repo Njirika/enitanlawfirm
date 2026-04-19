@@ -28,6 +28,7 @@ export * from "./healthStatus";
 export * from "./listBlogPostsParams";
 export * from "./listCareerApplicationsParams";
 export * from "./listContactMessagesParams";
+export * from "./updateAdminInput";
 export * from "./updateBlogPostInput";
 export * from "./updateCareerApplicationInput";
 export * from "./updateCareerApplicationInputStatus";

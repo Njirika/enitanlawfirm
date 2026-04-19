@@ -10,7 +10,8 @@ import {
   FileEdit, 
   LogOut,
   Menu,
-  X
+  X,
+  Settings
 } from "lucide-react";
 import { useState } from "react";
 
@@ -51,6 +52,7 @@ export function AdminLayout({ children }: { children: React.ReactNode }) {
     { href: "/admin/messages", label: "Messages", icon: MessageSquare },
     { href: "/admin/applications", label: "Applications", icon: FileText },
     { href: "/admin/blog", label: "Blog Posts", icon: FileEdit },
+    { href: "/admin/profile", label: "Settings", icon: Settings },
   ];
 
   return (

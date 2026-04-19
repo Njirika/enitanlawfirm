@@ -1,6 +1,6 @@
 import { Router, Request, Response } from "express";
 import { AuthService, BlogService, ContactService, CareerService } from "@workspace/db";
-import { verifyPassword } from "../lib/auth.js";
+import { verifyPassword, hashPassword } from "../lib/auth.js";
 import { AdminLoginBody } from "@workspace/api-zod";
 
 const router = Router();
@@ -49,6 +49,43 @@ router.get("/me", async (req: Request, res: Response) => {
   }
 
   res.json({ id: user.id, email: user.email, name: user.name });
+});
+
+router.patch("/me", async (req: Request, res: Response) => {
+  const adminUserId = (req.session as unknown as Record<string, unknown>).adminUserId as number | undefined;
+  if (!adminUserId) {
+    res.status(401).json({ error: "Not authenticated" });
+    return;
+  }
+
+  const { email, password, name } = req.body;
+  const updateData: any = {};
+  
+  if (email) updateData.email = email;
+  if (name) updateData.name = name;
+  if (password) {
+    updateData.passwordHash = hashPassword(password);
+  }
+
+  if (Object.keys(updateData).length === 0) {
+    res.status(400).json({ error: "No fields to update" });
+    return;
+  }
+
+  try {
+    const updated = await AuthService.updateAdminUser(adminUserId, updateData);
+    if (!updated) {
+      res.status(404).json({ error: "Not found" });
+      return;
+    }
+    res.json({ id: updated.id, email: updated.email, name: updated.name });
+  } catch (err: any) {
+    if (err.code === "23505") { // Unique constraint violation
+      res.status(400).json({ error: "Email already in use" });
+      return;
+    }
+    res.status(500).json({ error: "Internal server error" });
+  }
 });
 
 router.get("/stats", async (req: Request, res: Response) => {
