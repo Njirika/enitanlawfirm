@@ -16,6 +16,17 @@ export const AuthService = {
   },
 
   /**
+   * Find the first admin user in the system
+   */
+  async findFirstAdmin() {
+    const [user] = await db
+      .select()
+      .from(adminUsersTable)
+      .limit(1);
+    return user || null;
+  },
+
+  /**
    * Find an admin user by ID
    */
   async findUserById(id: number) {

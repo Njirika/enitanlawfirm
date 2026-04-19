@@ -77,7 +77,7 @@ export class DrizzleStore extends session.Store {
       await db.delete(sessionsTable).where(lt(sessionsTable.expire, new Date()));
       console.log("[SYSTEM] Expired sessions cleaned up.");
     } catch (err) {
-      console.error("[ERROR] Failed to clean up expired sessions:", err);
+      console.error("[CRITICAL ERROR] Failed to clean up expired sessions. Does the 'sessions' table exist?", err);
     }
   }
 }
