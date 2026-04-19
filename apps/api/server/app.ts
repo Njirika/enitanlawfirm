@@ -7,6 +7,7 @@ import cookieParser from "cookie-parser";
 import router from "./routes/index.js";
 import { logger } from "./lib/logger.js";
 import { config } from "./config.js";
+import { DrizzleStore } from "./lib/session-store.js";
 
 const app: Express = express();
 app.set("trust proxy", 1);
@@ -46,6 +47,7 @@ app.use(
     resave: false,
     saveUninitialized: false,
     proxy: true,
+    store: new DrizzleStore(),
     cookie: {
       secure: config.nodeEnv === "production",
       sameSite: config.nodeEnv === "production" ? "lax" : "lax",
