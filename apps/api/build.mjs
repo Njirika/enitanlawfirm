@@ -26,7 +26,17 @@ async function buildAll() {
     // Examples of unbundleable packages:
     // - uses native modules and loads them dynamically (e.g. sharp)
     // - use path traversal to read files (e.g. @google-cloud/secret-manager loads sibling .proto files)
-    external: ["*.node"],
+    external: [
+      "*.node",
+      "express",
+      "pino",
+      "pino-http",
+      "cors",
+      "cookie-parser",
+      "express-session",
+      "@workspace/db",
+      "@workspace/api-zod"
+    ],
     sourcemap: "linked",
     plugins: [],
     // Make sure packages that are cjs only (e.g. express) but are bundled continue to work in our esm output file
