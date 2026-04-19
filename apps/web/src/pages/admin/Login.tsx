@@ -43,7 +43,7 @@ export default function AdminLogin() {
       {
         onSuccess: (res) => {
           if (res.success) {
-            window.location.href = "/admin"; // Force reload to fetch me endpoint
+            window.location.href = "/admin/"; // Force reload with trailing slash
           }
         },
         onError: () => {
