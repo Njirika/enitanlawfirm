@@ -74,7 +74,7 @@ export function Navbar() {
             ))}
             
             <div className="flex items-center gap-4">
-              {isAdmin && (
+              {(isAdmin && localStorage.getItem("is_admin_authenticated") === "true") && (
                 <Link href="/admin">
                   <Button variant="outline" className={isTransparent ? "border-white/20 text-white hover:bg-white/10" : ""}>
                     <LayoutDashboard className="w-4 h-4 mr-2" />
@@ -92,7 +92,7 @@ export function Navbar() {
 
           {/* Mobile Menu Toggle */}
           <div className="lg:hidden flex items-center gap-4">
-            {isAdmin && (
+            {(isAdmin && localStorage.getItem("is_admin_authenticated") === "true") && (
                <Link href="/admin">
                 <Button variant="outline" size="sm" className={isTransparent ? "border-white/20 text-white" : ""}>
                   <LayoutDashboard className="w-4 h-4" />
@@ -130,7 +130,7 @@ export function Navbar() {
             </Link>
           ))}
           <div className="flex flex-col gap-2 pt-2 border-t border-border">
-            {isAdmin && (
+            {(isAdmin && localStorage.getItem("is_admin_authenticated") === "true") && (
               <Link href="/admin">
                 <Button variant="outline" className="w-full font-semibold" onClick={() => setIsMobileMenuOpen(false)}>
                   <LayoutDashboard className="w-4 h-4 mr-2" />

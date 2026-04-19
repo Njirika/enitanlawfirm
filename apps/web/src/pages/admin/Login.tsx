@@ -43,6 +43,7 @@ export default function AdminLogin() {
       {
         onSuccess: (res) => {
           if (res.success) {
+            localStorage.setItem("is_admin_authenticated", "true");
             window.location.href = "/admin/"; // Force reload with trailing slash
           }
         },

@@ -56,6 +56,7 @@ export function AdminLayout({ children }: { children: React.ReactNode }) {
   const handleLogout = () => {
     logout.mutate(undefined, {
       onSuccess: () => {
+        localStorage.removeItem("is_admin_authenticated");
         window.location.href = "/admin/login";
       }
     });
