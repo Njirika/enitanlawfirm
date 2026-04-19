@@ -9,6 +9,10 @@ const consoleLogger = {
   warn: (obj: any, msg?: string) => console.warn(JSON.stringify({ level: "warn", ...obj, msg })),
   debug: (obj: any, msg?: string) => console.debug(JSON.stringify({ level: "debug", ...obj, msg })),
   child: () => consoleLogger,
+  levels: {
+    values: { trace: 10, debug: 20, info: 30, warn: 40, error: 50, fatal: 60 },
+    labels: { 10: "trace", 20: "debug", 30: "info", 40: "warn", 50: "error", 60: "fatal" },
+  },
 };
 
 export const logger = isProduction ? (consoleLogger as any) : pino({
