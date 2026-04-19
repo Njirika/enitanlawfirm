@@ -17,8 +17,8 @@ const TEAM_MEMBERS = [
     role: "Principal Partner & Consultant",
     callToBar: "1986",
     image: "/images/team-enitan.jpg",
-    summary: "Over four decades of experience. Alumnus of Obafemi Awolowo University. Started at Directorate of Public Prosecutions.",
-    fullBio: "Enitan Godwin Afolabi brings over four decades of unparalleled legal expertise to the firm. An alumnus of the prestigious University of Ife (now Obafemi Awolowo University), his career began at the Directorate of Public Prosecutions, Ministry of Justice. He subsequently held senior roles at Fola Akinrinsola & Co. and S.O. Ige & Co., honing his skills in complex litigation and corporate advisory. His distinguished career also includes serving as Corporate Director at Olanibi Papa Ajao Community Bank. As Principal Partner, he provides strategic direction and consulting across all practice areas, ensuring the firm's legacy of excellence continues."
+    summary: "Distinguished Notary Public with over four decades of legal expertise. Alumnus of University of Ife.",
+    fullBio: "Enitan Godwin Afolabi, a distinguished Notary Public, brings over four decades of unparalleled legal expertise to the firm. An alumnus of the prestigious University of Ife (now Obafemi Awolowo University), his career began at the Directorate of Public Prosecutions, Ministry of Justice. He subsequently held senior roles at Fola Akinrinsola & Co. and S.O. Ige & Co., honing his skills in complex litigation and corporate advisory. His distinguished career also includes serving as Corporate Director at Olanibi Papa Ajao Community Bank. As Principal Partner, he provides strategic direction and consulting across all practice areas, ensuring the firm's legacy of excellence continues."
   },
   {
     id: "francis",
@@ -26,8 +26,8 @@ const TEAM_MEMBERS = [
     role: "Senior Associate",
     callToBar: "2001",
     image: "/images/team-francis.jpg",
-    summary: "Joined firm in 2008, leads civil litigation department. Known for precision and a highly persuasive advocacy style.",
-    fullBio: "Francis Afeakuye Izuagie is a Senior Associate who has been an integral part of the firm since 2008. A graduate of Ambrose Alli University, he was called to the Nigerian Bar in 2001. He currently leads the firm's civil litigation department, bringing a reputation for meticulous precision and a highly persuasive advocacy style. Before joining Enitan Afolabi & Co., he gained extensive experience at Kayode Adaramoye & Associates and Chief O.O. Ajala & Co. His deep understanding of courtroom dynamics and strategic dispute resolution makes him a formidable advocate for our clients."
+    summary: "Senior Associate and Notary Public. Leads the firm's civil litigation department with meticulous precision.",
+    fullBio: "Francis Afeakuye Izuagie is a Senior Associate and Notary Public who has been an integral part of the firm since 2008. A graduate of Ambrose Alli University, he was called to the Nigerian Bar in 2001. He currently leads the firm's civil litigation department, bringing a reputation for meticulous precision and a highly persuasive advocacy style. Before joining Enitan Afolabi & Co., he gained extensive experience at Kayode Adaramoye & Associates and Chief O.O. Ajala & Co. His deep understanding of courtroom dynamics and strategic dispute resolution makes him a formidable advocate for our clients."
   },
   {
     id: "olamide",
@@ -37,6 +37,15 @@ const TEAM_MEMBERS = [
     image: "/images/team-olamide.jpg",
     summary: "Specialization in Maritime Law. Fellow of Institute of Chartered Mediators and Conciliators.",
     fullBio: "Olamide Oluwasegun Afolabi is a dynamic Senior Associate with a specialized focus on Maritime Law. He earned his LL.B from Houdegbe North American University (2015) and Crescent University, Abeokuta (2019), before his call to the Bar in 2024. Prior to his current role, he practiced at Jean Chiazor & Partners. Olamide is distinguished not only by his maritime expertise but also his commitment to alternative dispute resolution—he is a Member of the Institute of Construction Arbitrators and a Fellow of the Institute of Chartered Mediators and Conciliators. He brings fresh, innovative legal strategies to complex commercial matters."
+  },
+  {
+    id: "faith",
+    name: "Faith Nyerovwo Erhabor",
+    role: "Associate",
+    callToBar: "2024",
+    image: "/images/team-faith.jpg",
+    summary: "Associate with a practice focus on Family Law, Property Law, and ADR. LL.M holder (2026).",
+    fullBio: "Faith Nyerovwo Erhabor is an Associate with a practice focus on Family Law, Property Law, and Alternative Dispute Resolution (ADR). She graduated from Benson Idahosa University in 2021 and was called to the Nigerian Bar in 2024. She holds a Master of Laws (LL.M, 2026), which strengthens her expertise in handling complex legal research and advisory. Faith is dedicated to providing efficient solutions for clients in domestic relations and real estate matters through both litigation and ADR."
   }
 ];
 

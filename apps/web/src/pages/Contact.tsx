@@ -111,7 +111,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-bold text-lg mb-1">Telephone</h4>
-                    <p className="text-white/80">+234 811 948 0206</p>
+                    <p className="text-white/80">+234 811 948 0206<br/>+234 901 017 0416</p>
                   </div>
                 </div>
 
@@ -121,8 +121,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-bold text-lg mb-1">Email</h4>
-                    <a href="mailto:info@enitanafolabiandco.com" className="text-white/80 hover:text-secondary transition-colors">
-                      info@enitanafolabiandco.com
+                    <a href="mailto:enitanafolabiandco@gmail.com" className="text-white/80 hover:text-secondary transition-colors">
+                      enitanafolabiandco@gmail.com
                     </a>
                   </div>
                 </div>

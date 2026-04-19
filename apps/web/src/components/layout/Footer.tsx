@@ -52,13 +52,16 @@ export function Footer() {
                 <MapPin className="w-5 h-5 mt-0.5 shrink-0 text-secondary" />
                 <span>1st Floor, Chemline House, No 7, Obasa road, off Oba Akran Avenue, Ikeja, Lagos-State</span>
               </li>
-              <li className="flex items-center space-x-3 text-primary-foreground/80">
-                <Phone className="w-5 h-5 shrink-0 text-secondary" />
-                <span>+2348119480206</span>
+              <li className="flex items-start space-x-3 text-primary-foreground/80">
+                <Phone className="w-5 h-5 mt-0.5 shrink-0 text-secondary" />
+                <div className="flex flex-col">
+                  <span>+234 811 948 0206</span>
+                  <span>+234 901 017 0416</span>
+                </div>
               </li>
               <li className="flex items-center space-x-3 text-primary-foreground/80">
                 <Mail className="w-5 h-5 shrink-0 text-secondary" />
-                <span>info@enitanafolabiandco.com</span>
+                <span>enitanafolabiandco@gmail.com</span>
               </li>
             </ul>
           </div>
