@@ -4,11 +4,7 @@ const isProduction = process.env.NODE_ENV === "production";
 
 export const logger = pino({
   level: process.env.LOG_LEVEL ?? "info",
-  redact: [
-    "req.headers.authorization",
-    "req.headers.cookie",
-    "res.headers['set-cookie']",
-  ],
+  // In production (Vercel), we avoid transports/worker-threads as they can cause startup crashes
   ...(isProduction
     ? {}
     : {
@@ -17,4 +13,9 @@ export const logger = pino({
           options: { colorize: true },
         },
       }),
+  redact: [
+    "req.headers.authorization",
+    "req.headers.cookie",
+    "res.headers['set-cookie']",
+  ],
 });
