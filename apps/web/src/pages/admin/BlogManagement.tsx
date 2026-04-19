@@ -21,11 +21,21 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { Skeleton } from "@/components/ui/skeleton";
+import { BlogPostForm } from "./BlogPostForm";
 
 export default function BlogManagement() {
   const [page, setPage] = useState(1);
   const [deleteId, setDeleteId] = useState<string | null>(null);
+  const [editingSlug, setEditingSlug] = useState<string | null>(null);
+  const [isAddingNew, setIsAddingNew] = useState(false);
+  
   const { toast } = useToast();
   const queryClient = useQueryClient();
   const deleteMutation = useDeleteBlogPost();
@@ -57,11 +67,9 @@ export default function BlogManagement() {
           <h1 className="text-3xl font-serif font-bold text-primary mb-1">Blog Management</h1>
           <p className="text-muted-foreground">Create and edit articles for the firm's insights page.</p>
         </div>
-        <Link href="/admin/blog/new">
-          <Button className="shrink-0 gap-2">
-            <Plus className="w-4 h-4" /> New Post
-          </Button>
-        </Link>
+        <Button onClick={() => setIsAddingNew(true)} className="shrink-0 gap-2">
+          <Plus className="w-4 h-4" /> New Post
+        </Button>
       </div>
 
       <div className="bg-card rounded-xl border border-border shadow-sm overflow-hidden">
@@ -106,16 +114,20 @@ export default function BlogManagement() {
                     </td>
                     <td className="px-6 py-4 text-right">
                       <div className="flex justify-end gap-2">
-                        <Link href={`/blog/${post.slug}`}>
+                        {/* Use ~ to escape admin nest for viewing public posts */}
+                        <Link href={`~/blog/${post.slug}`}>
                           <Button variant="ghost" size="icon" title="View live">
                             <ExternalLink className="w-4 h-4 text-muted-foreground" />
                           </Button>
                         </Link>
-                        <Link href={`/admin/blog/edit/${post.slug}`}>
-                          <Button variant="ghost" size="icon" title="Edit">
-                            <Edit className="w-4 h-4 text-secondary" />
-                          </Button>
-                        </Link>
+                        <Button 
+                          variant="ghost" 
+                          size="icon" 
+                          title="Edit"
+                          onClick={() => setEditingSlug(post.slug)}
+                        >
+                          <Edit className="w-4 h-4 text-secondary" />
+                        </Button>
                         <Button 
                           variant="ghost" 
                           size="icon" 
@@ -134,6 +146,7 @@ export default function BlogManagement() {
         )}
       </div>
 
+      {/* Delete Confirmation */}
       <AlertDialog open={!!deleteId} onOpenChange={(open) => !open && setDeleteId(null)}>
         <AlertDialogContent>
           <AlertDialogHeader>
@@ -150,6 +163,38 @@ export default function BlogManagement() {
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
+
+      {/* New/Edit Modal */}
+      <Dialog 
+        open={isAddingNew || !!editingSlug} 
+        onOpenChange={(open) => {
+          if (!open) {
+            setIsAddingNew(false);
+            setEditingSlug(null);
+          }
+        }}
+      >
+        <DialogContent className="sm:max-w-[700px] max-h-[90vh] flex flex-col p-0">
+          <DialogHeader className="p-6 pb-2">
+            <DialogTitle className="text-2xl font-serif text-primary">
+              {editingSlug ? "Edit Blog Post" : "Create New Blog Post"}
+            </DialogTitle>
+          </DialogHeader>
+          <div className="flex-1 overflow-auto p-6 pt-2">
+            <BlogPostForm 
+              slug={editingSlug || undefined} 
+              onSuccess={() => {
+                setIsAddingNew(false);
+                setEditingSlug(null);
+              }}
+              onCancel={() => {
+                setIsAddingNew(false);
+                setEditingSlug(null);
+              }}
+            />
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

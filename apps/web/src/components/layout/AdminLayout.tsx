@@ -98,6 +98,18 @@ export function AdminLayout({ children }: { children: React.ReactNode }) {
           )}
         </button>
 
+        <button 
+          onClick={() => setIsCollapsed(!isCollapsed)}
+          className="absolute top-6 -right-4 z-[60] hidden lg:flex items-center justify-center w-8 h-8 rounded-full bg-secondary text-secondary-foreground shadow-xl transition-all duration-300 group hover:scale-110"
+          title={isCollapsed ? "Expand menu" : "Collapse menu"}
+        >
+          {isCollapsed ? (
+            <ChevronRight className="w-5 h-5 transition-transform group-hover:translate-x-0.5" />
+          ) : (
+            <ChevronLeft className="w-5 h-5 transition-transform group-hover:-translate-x-0.5" />
+          )}
+        </button>
+
         <div className="h-full flex flex-col relative">
           {/* Logo Section */}
           <div className={cn(
@@ -116,7 +128,10 @@ export function AdminLayout({ children }: { children: React.ReactNode }) {
           </div>
           
           {/* Nav Section */}
-          <nav className="flex-1 p-4 space-y-2 overflow-y-auto mt-2">
+          <nav className={cn(
+            "flex-1 p-4 space-y-2 mt-2",
+            isCollapsed ? "overflow-hidden" : "overflow-y-auto"
+          )}>
             {navItems.map((item) => {
               const isActive = location === item.href || (location.startsWith(item.href) && item.href !== "/");
               return (
