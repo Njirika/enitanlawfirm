@@ -178,7 +178,7 @@ export function AdminLayout({ children }: { children: React.ReactNode }) {
             
             {!isCollapsed && (
               <div className="mt-4 pt-4 border-t border-slate-800 text-center">
-                <Link href="/">
+                <Link href="~/">
                   <span className="text-xs text-secondary hover:text-white transition-colors cursor-pointer flex items-center justify-center">
                     <ChevronLeft className="w-3 h-3 mr-1" />
                     Back to Website

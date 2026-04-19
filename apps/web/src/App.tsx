@@ -69,6 +69,7 @@ function Router() {
       <Route path="/admin" nest>
         <AdminLayout>
           <Switch>
+            <Route path="/login" component={AdminLogin} />
             <Route path="/messages" component={Messages} />
             <Route path="/applications" component={Applications} />
             <Route path="/blog" component={BlogManagement} />
