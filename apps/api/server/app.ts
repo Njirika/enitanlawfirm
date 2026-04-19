@@ -9,6 +9,7 @@ import { logger } from "./lib/logger.js";
 import { config } from "./config.js";
 
 const app: Express = express();
+app.set("trust proxy", 1);
 
 app.use(
   pinoHttp({
@@ -44,8 +45,10 @@ app.use(
     secret: config.sessionSecret,
     resave: false,
     saveUninitialized: false,
+    proxy: true,
     cookie: {
       secure: config.nodeEnv === "production",
+      sameSite: config.nodeEnv === "production" ? "lax" : "lax",
       httpOnly: true,
       maxAge: 24 * 60 * 60 * 1000,
     },
