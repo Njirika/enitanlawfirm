@@ -2,10 +2,6 @@
   "version": 2,
   "rewrites": [
     {
-      "source": "/api/:path*",
-      "destination": "https://enitanlawfirm-api.vercel.app/api/:path*"
-    },
-    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

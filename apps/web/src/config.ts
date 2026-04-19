@@ -22,8 +22,13 @@ export function validateEnv() {
   };
 }
 
+const apiUrl = import.meta.env.VITE_API_URL || "/api";
+if (import.meta.env.DEV || typeof window !== "undefined") {
+  console.log(`[SYSTEM] Client initialized with API_URL: ${apiUrl}`);
+}
+
 export const config = {
-  apiUrl: import.meta.env.VITE_API_URL || "/api",
+  apiUrl,
   supabase: {
     url: import.meta.env.VITE_SUPABASE_URL,
     anonKey: import.meta.env.VITE_SUPABASE_ANON_KEY,

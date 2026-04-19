@@ -35,6 +35,7 @@ app.use(
 app.use(cors({
   origin: config.corsOrigin,
   credentials: true,
+  optionsSuccessStatus: 200,
 }));
 
 app.use(cookieParser());
