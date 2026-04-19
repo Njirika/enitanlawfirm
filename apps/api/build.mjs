@@ -33,9 +33,7 @@ async function buildAll() {
       "pino-http",
       "cors",
       "cookie-parser",
-      "express-session",
-      "@workspace/db",
-      "@workspace/api-zod"
+      "express-session"
     ],
     sourcemap: "linked",
     plugins: [],
